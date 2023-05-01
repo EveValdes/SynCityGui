@@ -12,8 +12,8 @@ iRay  | Programming
 
 local Release = "Beta 8"
 local NotificationDuration = 6.5
-local RayfieldFolder = "Rayfield"
-local ConfigurationFolder = RayfieldFolder.."/Configurations"
+local SynCityFolder = "SynCity"
+local ConfigurationFolder = SynCityFolder.."/Configurations"
 local ConfigurationExtension = ".rfld"
 
 
@@ -896,7 +896,7 @@ function RayfieldLibrary:CreateWindow(Settings)
 		if not Settings.ConfigurationSaving.FileName then
 			Settings.ConfigurationSaving.FileName = tostring(game.PlaceId)
 		end
-		if not isfolder(RayfieldFolder.."/".."Configuration Folders") then
+		if not isfolder(SynCityFolder.."/".."Configuration Folders") then
 
 		end
 		if Settings.ConfigurationSaving.Enabled == nil then
@@ -926,10 +926,10 @@ function RayfieldLibrary:CreateWindow(Settings)
 	end
 
 	if Settings.Discord then
-		if not isfolder(RayfieldFolder.."/Discord Invites") then
-			makefolder(RayfieldFolder.."/Discord Invites")
+		if not isfolder(SynCityFolder.."/Discord Invites") then
+			makefolder(SynCityFolder.."/Discord Invites")
 		end
-		if not isfile(RayfieldFolder.."/Discord Invites".."/"..Settings.Discord.Invite..ConfigurationExtension) then
+		if not isfile(SynCityFolder.."/Discord Invites".."/"..Settings.Discord.Invite..ConfigurationExtension) then
 			if request then
 				request({
 					Url = 'http://127.0.0.1:6463/rpc?v=1',
@@ -947,7 +947,7 @@ function RayfieldLibrary:CreateWindow(Settings)
 			end
 
 			if Settings.Discord.RememberJoins then -- We do logic this way so if the developer changes this setting, the user still won't be prompted, only new users
-				writefile(RayfieldFolder.."/Discord Invites".."/"..Settings.Discord.Invite..ConfigurationExtension,"Rayfield RememberJoins is true for this invite, this invite will not ask you to join again")
+				writefile(SynCityFolder.."/Discord Invites".."/"..Settings.Discord.Invite..ConfigurationExtension,"Rayfield RememberJoins is true for this invite, this invite will not ask you to join again")
 			end
 		else
 
@@ -960,8 +960,8 @@ function RayfieldLibrary:CreateWindow(Settings)
 			return
 		end
 
-		if not isfolder(RayfieldFolder.."/Key System") then
-			makefolder(RayfieldFolder.."/Key System")
+		if not isfolder(SynCityFolder.."/Key System") then
+			makefolder(SynCityFolder.."/Key System")
 		end
 
 		if typeof(Settings.KeySettings.Key) == "string" then Settings.KeySettings.Key = {Settings.KeySettings.Key} end
@@ -982,9 +982,9 @@ function RayfieldLibrary:CreateWindow(Settings)
 			Settings.KeySettings.FileName = "No file name specified"
 		end
 
-		if isfile(RayfieldFolder.."/Key System".."/"..Settings.KeySettings.FileName..ConfigurationExtension) then
+		if isfile(SynCityFolder.."/Key System".."/"..Settings.KeySettings.FileName..ConfigurationExtension) then
 			for _, MKey in ipairs(Settings.KeySettings.Key) do
-				if string.find(readfile(RayfieldFolder.."/Key System".."/"..Settings.KeySettings.FileName..ConfigurationExtension), MKey) then
+				if string.find(readfile(SynCityFolder.."/Key System".."/"..Settings.KeySettings.FileName..ConfigurationExtension), MKey) then
 					Passthrough = true
 				end
 			end
@@ -1083,7 +1083,7 @@ function RayfieldLibrary:CreateWindow(Settings)
 					Passthrough = true
 					if Settings.KeySettings.SaveKey then
 						if writefile then
-							writefile(RayfieldFolder.."/Key System".."/"..Settings.KeySettings.FileName..ConfigurationExtension, FoundKey)
+							writefile(SynCityFolder.."/Key System".."/"..Settings.KeySettings.FileName..ConfigurationExtension, FoundKey)
 						end
 						RayfieldLibrary:Notify({Title = "Key System", Content = "The key for this script has been saved successfully"})
 					end
