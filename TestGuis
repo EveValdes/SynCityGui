@@ -1,7 +1,7 @@
 --[[
 
 Rayfield Interface Suite
-by Syn
+by Sirius
 
 shlex | Designing + Programming
 iRay  | Programming
@@ -25,7 +25,7 @@ local RayfieldLibrary = {
 			TextFont = "Default", -- Default will use the various font faces used across Rayfield
 			TextColor = Color3.fromRGB(225, 199, 255),
 
-			Background = Color3.fromRGB(240, 240, 240),
+			Background = Color3.fromRGB(245, 245, 245),
 			Topbar = Color3.fromRGB(34, 34, 34),
 			Shadow = Color3.fromRGB(20, 20, 20),
 
@@ -38,11 +38,11 @@ local RayfieldLibrary = {
 			TabTextColor = Color3.fromRGB(225, 199, 255),
 			SelectedTabTextColor = Color3.fromRGB(50, 50, 50),
 
-			ElementBackground = Color3.fromRGB(35, 35, 35),
-			ElementBackgroundHover = Color3.fromRGB(40, 40, 40),
+			ElementBackground = Color3.fromRGB(245, 245, 245),
+			ElementBackgroundHover = Color3.fromRGB(245, 245, 245),
 			SecondaryElementBackground = Color3.fromRGB(240, 240, 240), -- For labels and paragraphs
 			ElementStroke = Color3.fromRGB(50, 50, 50),
-			SecondaryElementStroke = Color3.fromRGB(40, 40, 40), -- For labels and paragraphs
+			SecondaryElementStroke = Color3.fromRGB(240, 240, 240), -- For labels and paragraphs
 
 			SliderBackground = Color3.fromRGB(43, 105, 159),
 			SliderProgress = Color3.fromRGB(43, 105, 159),
@@ -81,7 +81,7 @@ local RayfieldLibrary = {
 			ElementBackgroundHover = Color3.fromRGB(230, 230, 230),
 			SecondaryElementBackground = Color3.fromRGB(136, 136, 136), -- For labels and paragraphs
 			ElementStroke = Color3.fromRGB(180, 199, 97),
-			SecondaryElementStroke = Color3.fromRGB(40, 40, 40), -- For labels and paragraphs
+			SecondaryElementStroke = Color3.fromRGB(240, 240, 240), -- For labels and paragraphs
 
 			SliderBackground = Color3.fromRGB(31, 159, 71),
 			SliderProgress = Color3.fromRGB(31, 159, 71),
@@ -1797,7 +1797,7 @@ function RayfieldLibrary:CreateWindow(Settings)
 				DropdownOption.Visible = true
 
 				if DropdownSettings.CurrentOption == Option then
-					DropdownOption.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+					DropdownOption.BackgroundColor3 = Color3.fromRGB(240, 240, 240)
 				end
 
 				DropdownOption.BackgroundTransparency = 1
@@ -1852,7 +1852,7 @@ function RayfieldLibrary:CreateWindow(Settings)
 							Dropdown.Selected.Text = DropdownSettings.CurrentOption[1]
 						end
 						TweenService:Create(DropdownOption.UIStroke, TweenInfo.new(0.3, Enum.EasingStyle.Quint), {Transparency = 1}):Play()
-						TweenService:Create(DropdownOption, TweenInfo.new(0.3, Enum.EasingStyle.Quint), {BackgroundColor3 = Color3.fromRGB(40, 40, 40)}):Play()
+						TweenService:Create(DropdownOption, TweenInfo.new(0.3, Enum.EasingStyle.Quint), {BackgroundColor3 = Color3.fromRGB(240, 240, 240)}):Play()
 						Debounce = true
 						wait(0.2)
 						TweenService:Create(DropdownOption.UIStroke, TweenInfo.new(0.3, Enum.EasingStyle.Quint), {Transparency = 0}):Play()
@@ -1904,7 +1904,7 @@ function RayfieldLibrary:CreateWindow(Settings)
 					if not table.find(DropdownSettings.CurrentOption, droption.Name) then
 						droption.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
 					else
-						droption.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+						droption.BackgroundColor3 = Color3.fromRGB(240, 240, 240)
 					end
 				end
 			end
@@ -1952,7 +1952,7 @@ function RayfieldLibrary:CreateWindow(Settings)
 						if not table.find(DropdownSettings.CurrentOption, droption.Name) then
 							droption.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
 						else
-							droption.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+							droption.BackgroundColor3 = Color3.fromRGB(240, 240, 240)
 						end
 					end
 				end
