@@ -2296,9 +2296,16 @@ function SynLibrary:CreateWindow(Settings)
 				end 
 			end)
 
-            if bobby = true then
-                ImageFrame.BackgroundTransparency = 1
-            end
+           while
+
+            _G.HideGui = true;
+
+            spawn(function()
+                    while _G.HideGui = true do
+                        wait(2)
+                        ImageFrame.BackgroundTransparency = 0.95
+                    end
+                end)
 
 			Slider.Main.Interact.MouseButton1Down:Connect(function(X)
 				local Current = Slider.Main.Progress.AbsolutePosition.X + Slider.Main.Progress.AbsoluteSize.X
