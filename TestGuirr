@@ -892,65 +892,7 @@ function RayfieldLibrary:CreateWindow(Settings)
 	Elements.Visible = false
 	LoadingFrame.Visible = true
 
-    pcall(function()
-        if not Settings.ConfigurationSaving.FileName then
-            Settings.ConfigurationSaving.FileName = tostring(game.PlaceId)
-        end
-        if not isfolder(SynCityFolder.."/".."Configuration Folders") then
     
-        end
-        if Settings.ConfigurationSaving.Enabled == nil then
-            Settings.ConfigurationSaving.Enabled = false
-        end
-        CFileName = Settings.ConfigurationSaving.FileName
-        ConfigurationFolder = Settings.ConfigurationSaving.FolderName or ConfigurationFolder
-        CEnabled = Settings.ConfigurationSaving.Enabled
-    
-        if Settings.ConfigurationSaving.Enabled then
-            if not isfolder(ConfigurationFolder) then
-                makefolder(ConfigurationFolder)
-            end	
-        end
-    end)
-    
-    -- New code starts here
-    local ImageLink = ""
-    local ImageFrame = Instance.new("Frame")
-    ImageFrame.Size = UDim2.new(1, 0, 0, 100)
-    ImageFrame.Position = UDim2.new(0, 0, 0, 50)
-    ImageFrame.BackgroundTransparency = 0.5
-    ImageFrame.BackgroundColor3 = Color3.new(0, 0, 0)
-    ImageFrame.BorderSizePixel = 0
-    ImageFrame.Parent = Main
-    
-    local TextBox = Instance.new("TextBox")
-    TextBox.Size = UDim2.new(0.8, 0, 0, 50)
-    TextBox.Position = UDim2.new(0.1, 0, 0, 0)
-    TextBox.PlaceholderText = "Enter Image Link Here"
-    TextBox.ClearTextOnFocus = false
-    TextBox.Parent = ImageFrame
-    
-    local ShowButton = Instance.new("TextButton")
-    ShowButton.Size = UDim2.new(0.2, 0, 0, 50)
-    ShowButton.Position = UDim2.new(0.4, 0, 1, -50)
-    ShowButton.Text = "Show Image"
-    ShowButton.TextColor3 = Color3.new(1, 1, 1)
-    ShowButton.BackgroundColor3 = Color3.new(0, 0.5, 1)
-    ShowButton.BorderSizePixel = 0
-    ShowButton.Parent = ImageFrame
-    ShowButton.MouseButton1Click:Connect(function()
-        ImageFrame:ClearAllChildren()
-        ImageFrame.Size = UDim2.new(1, 0, 1, 0)
-        local Image = Instance.new("ImageLabel")
-        Image.Size = UDim2.new(1, 0, 1, 0)
-        Image.BackgroundTransparency = 1
-        Image.Image = ImageLink
-        Image.Parent = ImageFrame
-    end)
-    
-    TextBox.FocusLost:Connectfunction(EnterPressed)
-        if EnterPressed and TextBox.Text ~= "" then
-            ImageLink = TextBox.Text
 
 	pcall(function()
 		if not Settings.ConfigurationSaving.FileName then
