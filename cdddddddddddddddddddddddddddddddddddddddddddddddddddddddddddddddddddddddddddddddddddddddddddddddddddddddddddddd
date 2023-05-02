@@ -913,20 +913,17 @@ function SynLibrary:CreateWindow(Settings)
         Image.Parent = ImageFrame
         
 		ImageFrame.Size = UDim2.new(0.6, 2, 0.8, 5)
-	ImageFrame.Position = UDim2.new(0.37, 0, 0, 80)
+		ImageFrame.Position = UDim2.new(0.37, 0, 0, 80)
 
-	Makke thes the image spots, wikk look goodie
+		-- Create a new image label inside the ImageFrame
+		ImageLabel.Parent = ImageFrame
 
+		-- Set the image URL and size
+		ImageLabel.Image = "https://th.bing.com/th/id/OIP.iSu2RcCcdm78xbxNDJMJSgHaEo?pid=ImgDet&rs=1"
+		ImageLabel.Size = UDim2.new(1, 0, 1, 0)
 
-	-- Create a new image label inside the ImageFrame
-	ImageLabel.Parent = ImageFrame
-
-	-- Set the image URL and size
-	ImageLabel.Image = "https://th.bing.com/th/id/OIP.iSu2RcCcdm78xbxNDJMJSgHaEo?pid=ImgDet&rs=1"
-	ImageLabel.Size = UDim2.new(1, 0, 1, 0)
-
-	-- Set the position of the image label relative to the ImageFrame
-	ImageLabel.Position = UDim2.new(0, 0, 0, 0)
+		-- Set the position of the image label relative to the ImageFrame
+		ImageLabel.Position = UDim2.new(0, 0, 0, 0)
 
     end)
     
