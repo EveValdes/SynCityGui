@@ -102,9 +102,9 @@ local SynLibrary = {
 	}
 }
 
-while true do
-    ImageFrame.BackgroundTransparency = 0.9
-end
+
+ImageFrame.BackgroundTransparency = 0.9
+
 
 
 -- Services
