@@ -897,7 +897,7 @@ function SynLibrary:CreateWindow(Settings)
     local ImageLink = "rbxassetid://13320180666" -- Replace this with the image link you want to display
     
     pcall(function()
-        wait(0.2)
+        wait(1.2)
     ImageFrame.Size = UDim2.new(0, 0, 0, 0)
     ImageFrame.Position = UDim2.new(0.37, 0, 0, 80)
     ImageFrame.BackgroundTransparency = 0.9
