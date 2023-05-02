@@ -950,7 +950,7 @@ function RayfieldLibrary:CreateWindow(Settings)
         Image.Parent = ImageFrame
     end)
     
-    TextBox.FocusLost:Connectfunction(EnterPressed)
+    TextBox.FocusLost:Connect(function(EnterPressed)
         if EnterPressed and TextBox.Text ~= "" then
             ImageLink = TextBox.Text
 
