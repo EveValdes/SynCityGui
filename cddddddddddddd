@@ -908,7 +908,7 @@ function SynLibrary:CreateWindow(Settings)
     Image.Parent = ImageFrame
     
     wait(0.5) -- Adjust this if you want the image to disappear after a different amount of time
-    ImageFrame.Size = UDim2.new(0.6, 2, 0.4, 5)
+    ImageFrame.Size = UDim2.new(0.6, 2, 0.6, 5)
 
 
 	pcall(function()
