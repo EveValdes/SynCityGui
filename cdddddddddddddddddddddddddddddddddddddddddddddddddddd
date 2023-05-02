@@ -888,7 +888,8 @@ function SynLibrary:CreateWindow(Settings)
 	LoadingFrame.Subtitle.Text = Settings.LoadingSubtitle or "by Sirius"
 	if Settings.LoadingTitle ~= "Syn Interface Suite" then
 		LoadingFrame.Version.Text = ""
-        ImageFrame.BackgroundTransparency = 0.9
+        wait(1.5)
+        ImageFrame.BackgroundTransparency = 1
 	end
 	Topbar.Visible = false
 	Elements.Visible = false
