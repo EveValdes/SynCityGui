@@ -902,16 +902,13 @@ function RayfieldLibrary:CreateWindow(Settings)
     ImageFrame.Parent = Main
     
     local Image = Instance.new("ImageLabel")
-    Image.Size = UDim2.new(1, 0, 300, 0)
+    Image.Size = UDim2.new(1, 0, 1, 0)
     Image.BackgroundTransparency = 1
     Image.Image = ImageLink
     Image.Parent = ImageFrame
     
     wait(0.5) -- Adjust this if you want the image to disappear after a different amount of time
-    ImageFrame.Size = UDim2.new(1, 0, 0, 10)
-    wait(0.5) -- Adjust this if you want the image to disappear after a different amount of time
-    ImageFrame.Size = UDim2.new(0, 0, 0, 0)
-
+    ImageFrame.Size = UDim2.new(300, 0, 0, 300)
 
 
 	pcall(function()
