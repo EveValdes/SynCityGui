@@ -9,7 +9,7 @@ iRay  | Programming
 ]]
 
 
-
+local ImageFrame = Instance.new("Frame")
 local Release = "Beta 8"
 local NotificationDuration = 6.5
 local SynCityFolder = "SynCity"
@@ -895,7 +895,7 @@ function SynLibrary:CreateWindow(Settings)
 	LoadingFrame.Visible = true
     
     local ImageLink = "rbxassetid://13320180666" -- Replace this with the image link you want to display
-    local ImageFrame = Instance.new("Frame")
+    
     ImageFrame.Size = UDim2.new(0, 0, 0, 0)
     ImageFrame.Position = UDim2.new(0.37, 0, 0, 80)
     ImageFrame.BackgroundTransparency = 0.9
