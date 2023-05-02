@@ -901,7 +901,7 @@ function SynLibrary:CreateWindow(Settings)
         wait(1.2)
         ImageFrame.Size = UDim2.new(0, 0, 0, 0)
         ImageFrame.Position = UDim2.new(0.37, 0, 0, 80)
-        ImageFrame.BackgroundTransparency = 0.9
+        TweenService:Create(ImageFrame, TweenInfo.new(0.5, Enum.EasingStyle.Quint), {BackgroundTransparency = 0.55}):Play()
         ImageFrame.BackgroundColor3 = Color3.new(0, 0, 0)
         ImageFrame.BorderSizePixel = 0
         ImageFrame.Parent = Main
@@ -1246,7 +1246,7 @@ function SynLibrary:CreateWindow(Settings)
 		-- Animate
 		wait(0.1)
 		if FirstTab then
-            TweenService:Create(ImageFrame, TweenInfo.new(2.7, Enum.EasingStyle.Quint), {BackgroundTransparency = 1}):Play()
+            TweenService:Create(ImageFrame, TweenInfo.new(0.5, Enum.EasingStyle.Quint), {BackgroundTransparency = 1}):Play()
 			TabButton.BackgroundColor3 = SelectedTheme.TabBackground
 			TabButton.Image.ImageColor3 = SelectedTheme.TabTextColor
 			TabButton.Title.TextColor3 = SelectedTheme.TabTextColor
