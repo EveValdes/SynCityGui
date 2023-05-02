@@ -895,7 +895,7 @@ function SynLibrary:CreateWindow(Settings)
 	LoadingFrame.Visible = true
     
     local ImageLink = "http://www.roblox.com/asset/?id=13320180644" -- Replace this with the image link you want to display
-    local Image = Instance.new("Image")
+    local Image = Instance.new("ImageLable")
     
     pcall(function()
         ImageFrame.Size = UDim2.new(0, 0, 0, 0)
