@@ -894,8 +894,8 @@ function RayfieldLibrary:CreateWindow(Settings)
 
     local ImageLink = ""
 local ImageFrame = Instance.new("Frame")
-ImageFrame.Size = UDim2.new(50, 0, 0, 50)
-ImageFrame.Position = UDim2.new(0, 0, 0, 50)
+ImageFrame.Size = UDim2.new(1, 0, 0, 10)
+ImageFrame.Position = UDim2.new(0, 0, 0, 10)
 ImageFrame.BackgroundTransparency = 0.5
 ImageFrame.BackgroundColor3 = Color3.new(0, 0, 0)
 ImageFrame.BorderSizePixel = 0
