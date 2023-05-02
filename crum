@@ -892,20 +892,19 @@ function RayfieldLibrary:CreateWindow(Settings)
 	Elements.Visible = false
 	LoadingFrame.Visible = true
 
-    local ImageFrame = Instance.new("Frame")
-    ImageFrame.Image = "rbxassetid://13320180666" 
-    ImageFrame.Size = UDim2.new(1, 0, 0, 100)
-    ImageFrame.Position = UDim2.new(0, 0, 0, 150)
-    ImageFrame.BackgroundTransparency = 0.5
-    ImageFrame.BackgroundColor3 = Color3.new(0, 0, 0)
-    ImageFrame.BorderSizePixel = 0
-    ImageFrame.Parent = Main
-    
+    local ImageFrame= Instance.new("Frame")
+    ImageFrame.Size = UDim2.new(1, 0, 1, 0)
+    ImageFrame.BackgroundTransparency = 1
+    ImageFrame.Image = ImageLink
+    ImageFrame.Parent = ImageFrame
     local Image = Instance.new("ImageLabel")
-    Image.Size = UDim2.new(1, 0, 1, 0)
-    Image.BackgroundTransparency = 1
-    Image.Image = ImageLink
-    Image.Parent = ImageFrame
+    Image.Image = "rbxassetid://13320180666" 
+    Image.Size = UDim2.new(1, 0, 0, 100)
+    Image.Position = UDim2.new(0, 0, 0, 150)
+    Image.BackgroundTransparency = 0.5
+    Image.BackgroundColor3 = Color3.new(0, 0, 0)
+    Image.BorderSizePixel = 0
+    Image.Parent = Main
     
     wait(0.5) -- Adjust this if you want the image to disappear after a different amount of time
     ImageFrame.Size = UDim2.new(1, 0, 0, 100)
