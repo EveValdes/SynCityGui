@@ -914,27 +914,7 @@ function RayfieldLibrary:CreateWindow(Settings)
 		end
 	end)
 
-    local ImageFrame = Instance.new("Frame")
-    ImageFrame.Name = "ImageFrame"
-    ImageFrame.Parent = Main
-    ImageFrame.BackgroundTransparency = 1
-    ImageFrame.Size = UDim2.new(1, 0, 1, 0)
-    ImageFrame.Visible = false
-
-    local ImageLabel = Instance.new("ImageLabel")
-    ImageLabel.Name = "ImageLabel"
-    ImageLabel.Parent = ImageFrame
-    ImageLabel.BackgroundTransparency = 1
-    ImageLabel.Size = UDim2.new(1, 0, 1, 0)
-    ImageLabel.Position = UDim2.new(0, 0, 0, 0)
-
-    if Settings.ImageLink then
-        ImageLabel.Image = Settings.ImageLink
-        ImageFrame.Visible = true
-        wait(0.7)
-        ImageFrame.Visible = false
-    end
-end
+    
 
 
     
