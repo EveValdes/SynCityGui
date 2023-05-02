@@ -887,13 +887,8 @@ function SynLibrary:CreateWindow(Settings)
 	LoadingFrame.Subtitle.Text = Settings.LoadingSubtitle or "by Sirius"
 	if Settings.LoadingTitle ~= "Syn Interface Suite" then
 		LoadingFrame.Version.Text = ""
-	end
-	Topbar.Visible = false
-	Elements.Visible = false
-	LoadingFrame.Visible = true
     
-    function SynLibrary:CreateWindow(Settings)
-    local Passthrough = true
+        function SynLibrary:CreateWindow(Settings)
     local ImageLink = "rbxassetid://13320180666" -- Replace this with the image link you want to display
     local ImageFrame = Instance.new("Frame")
     ImageFrame.Size = UDim2.new(0.6, 2, 0.8, 5)
@@ -911,7 +906,14 @@ function SynLibrary:CreateWindow(Settings)
     
     wait(0.5) -- Adjust this if you want the image to disappear after a different amount of time
     ImageFrame.Size = UDim2.new(0.6, 2, 0.8, 5)
-    end
+    
+	end
+	Topbar.Visible = false
+	Elements.Visible = false
+	LoadingFrame.Visible = true
+    
+    
+
 
 	pcall(function()
 		if not Settings.ConfigurationSaving.FileName then
