@@ -896,6 +896,7 @@ function SynLibrary:CreateWindow(Settings)
     
     local ImageLink = "rbxassetid://13320180666" -- Replace this with the image link you want to display
     local Image = Instance.new("ImageLabel")
+    local ImageLabel = Instance.new("ImageLabel")
 
     pcall(function()
         ImageFrame.Size = UDim2.new(0, 0, 0, 0)
@@ -912,7 +913,11 @@ function SynLibrary:CreateWindow(Settings)
         Image.Image = ImageLink
         Image.Parent = ImageFrame
         
-		
+		ImageFrame.Size = UDim2.new(0.6, 2, 0.8, 5)
+		ImageFrame.Position = UDim2.new(0.37, 0, 0, 80)
+
+	
+
     end)
     
 
