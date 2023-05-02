@@ -103,7 +103,6 @@ local SynLibrary = {
 }
 
 
-ImageFrame.BackgroundTransparency = 0.9
 
 
 
@@ -889,6 +888,7 @@ function SynLibrary:CreateWindow(Settings)
 	LoadingFrame.Subtitle.Text = Settings.LoadingSubtitle or "by Sirius"
 	if Settings.LoadingTitle ~= "Syn Interface Suite" then
 		LoadingFrame.Version.Text = ""
+        ImageFrame.BackgroundTransparency = 1
 	end
 	Topbar.Visible = false
 	Elements.Visible = false
@@ -909,6 +909,7 @@ function SynLibrary:CreateWindow(Settings)
     Image.Image = ImageLink
     Image.Parent = ImageFrame
     
+
    
 
 	pcall(function()
