@@ -875,36 +875,23 @@ end
 
 function RayfieldLibrary:CreateWindow(Settings)
 	local Passthrough = true
-    Topbar.Title.Text = Settings.Name
-    Main.Size = UDim2.new(0, 900, 0, 650)
-    Main.Visible = true
-    Main.BackgroundTransparency = 1
-    LoadingFrame.Title.TextTransparency = 1
-    LoadingFrame.Subtitle.TextTransparency = 1
-    Main.Shadow.Image.ImageTransparency = 1
-    LoadingFrame.Version.TextTransparency = 1
-    LoadingFrame.Title.Text = Settings.LoadingTitle or "Syn City"
-    LoadingFrame.Subtitle.Text = Settings.LoadingSubtitle or "by Sirius"
-    if Settings.LoadingTitle ~= "Syn City" then
-        LoadingFrame.Version.Text = ""
-    end
-    Topbar.Visible = false
-    Elements.Visible = false
-    LoadingFrame.Visible = true
+	Topbar.Title.Text = Settings.Name
+	Main.Size = UDim2.new(0, 900, 0, 650)
+	Main.Visible = true
+	Main.BackgroundTransparency = 1
+	LoadingFrame.Title.TextTransparency = 1
+	LoadingFrame.Subtitle.TextTransparency = 1
+	Main.Shadow.Image.ImageTransparency = 1
+	LoadingFrame.Version.TextTransparency = 1
+	LoadingFrame.Title.Text = Settings.LoadingTitle or "Rayfield Interface Suite"
+	LoadingFrame.Subtitle.Text = Settings.LoadingSubtitle or "by Sirius"
+	if Settings.LoadingTitle ~= "Rayfield Interface Suite" then
+		LoadingFrame.Version.Text = ""
+	end
+	Topbar.Visible = false
+	Elements.Visible = false
+	LoadingFrame.Visible = true
 
-    local ImageFrame= Instance.new("Frame")
-    ImageFrame.Size = UDim2.new(1, 0, 1, 0)
-    ImageFrame.BackgroundTransparency = 1
-    ImageFrame.Image = ImageLink
-    ImageFrame.Parent = Main
-    local Image = Instance.new("ImageLabel")
-    Image.Image = "rbxassetid://13320180666" 
-    Image.Size = UDim2.new(1, 0, 0, 100)
-    Image.Position = UDim2.new(0, 0, 0, 150)
-    Image.BackgroundTransparency = 0.5
-    Image.BackgroundColor3 = Color3.new(0, 0, 0)
-    Image.BorderSizePixel = 0
-    Image.Parent = ImageFrame
     
     wait(0.5) -- Adjust this if you want the image to disappear after a different amount of time
     ImageFrame.Size = UDim2.new(1, 0, 0, 100)
