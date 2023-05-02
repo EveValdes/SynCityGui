@@ -877,6 +877,7 @@ function RayfieldLibrary:CreateWindow(Settings)
 	local Passthrough = true
 	Topbar.Title.Text = Settings.Name
 	Main.Size = UDim2.new(0, 900, 0, 650)
+    Main.Text.Size = UDim2.new(0, 900, 0, 650)
 	Main.Visible = true
 	Main.BackgroundTransparency = 1
 	LoadingFrame.Title.TextTransparency = 1
@@ -1153,7 +1154,7 @@ function RayfieldLibrary:CreateWindow(Settings)
 	TweenService:Create(LoadingFrame.Title, TweenInfo.new(0.7, Enum.EasingStyle.Quint), {TextTransparency = 0}):Play()
 	wait(0.05)
 	TweenService:Create(LoadingFrame.Subtitle, TweenInfo.new(0.7, Enum.EasingStyle.Quint), {TextTransparency = 0}):Play()
-	wait(1.05)
+	wait(0.75)
 	TweenService:Create(LoadingFrame.Version, TweenInfo.new(0.7, Enum.EasingStyle.Quint), {TextTransparency = 0}):Play()
 
 	Elements.Template.LayoutOrder = 100000
