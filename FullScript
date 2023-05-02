@@ -4,8 +4,8 @@ local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/EveV
 
 local Window = Rayfield:CreateWindow({
    Name = "                                     👑 Syn City 👑",
-   LoadingTitle = "           Welcome To Syn City",
-   LoadingSubtitle = "         GameName",
+   LoadingTitle = "    Welcome To Syn City",
+   LoadingSubtitle = "             GameName",
    ConfigurationSaving = {
       Enabled = true,
       FolderName = SynCity, -- Create a custom folder for your hub/game
