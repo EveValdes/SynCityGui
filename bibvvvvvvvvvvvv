@@ -910,6 +910,7 @@ function SynLibrary:CreateWindow(Settings)
         Image.BackgroundTransparency = 1
         Image.Image = ImageLink
         Image.Parent = Main
+		Image.Transparency = 0
         
     end)
     
