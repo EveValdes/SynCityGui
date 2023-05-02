@@ -894,7 +894,7 @@ function SynLibrary:CreateWindow(Settings)
 	Elements.Visible = false
 	LoadingFrame.Visible = true
     
-    local ImageLink = "rbxassetid://13320180666" -- Replace this with the image link you want to display
+    local ImageLink = "https://tr.rbxcdn.com/b2353801bdbd70141d266659476af713/420/420/Decal/Png" -- Replace this with the image link you want to display
     local Image = Instance.new("ImageLabel")
     
     pcall(function()
@@ -907,9 +907,9 @@ function SynLibrary:CreateWindow(Settings)
     
    
         Image.Size = UDim2.new(1, 0, 1, 0)
-        Image.BackgroundTransparency = 0
+        Image.BackgroundTransparency = 1
         Image.Image = ImageLink
-    
+        Image.Parent = Main
         
     end)
     
