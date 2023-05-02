@@ -909,6 +909,9 @@ function RayfieldLibrary:CreateWindow(Settings)
     
     wait(0.5) -- Adjust this if you want the image to disappear after a different amount of time
     ImageFrame.Size = UDim2.new(1, 0, 0, 10)
+    wait(0.5) -- Adjust this if you want the image to disappear after a different amount of time
+    ImageFrame.Size = UDim2.new(0, 0, 0, 0)
+
 
 
 	pcall(function()
