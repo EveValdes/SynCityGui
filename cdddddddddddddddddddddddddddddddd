@@ -942,9 +942,10 @@ function SynLibrary:CreateWindow(Settings)
 		end
 	end
 
-     wait(1.5) -- Adjust this if you want the image to disappear after a different amount of time
+    fucntion()
+    wait(1.5) -- Adjust this if you want the image to disappear after a different amount of time
     ImageFrame.Size = UDim2.new(0.6, 2, 0.8, 5)
-
+    end
 
 	if Settings.Discord then
 		if not isfolder(SynCityFolder.."/Discord Invites") then
