@@ -102,7 +102,9 @@ local SynLibrary = {
 	}
 }
 
-
+while true do
+    ImageFrame.BackgroundTransparency = 0.9
+end
 
 
 -- Services
@@ -896,7 +898,7 @@ function SynLibrary:CreateWindow(Settings)
     local ImageFrame = Instance.new("Frame")
     ImageFrame.Size = UDim2.new(0, 0, 0, 0)
     ImageFrame.Position = UDim2.new(0.37, 0, 0, 80)
-    ImageFrame.BackgroundTransparency = 0.5
+    ImageFrame.BackgroundTransparency = 0.9
     ImageFrame.BackgroundColor3 = Color3.new(0, 0, 0)
     ImageFrame.BorderSizePixel = 0
     ImageFrame.Parent = Main
