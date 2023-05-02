@@ -874,79 +874,68 @@ function Minimise()
 end
 
 function RayfieldLibrary:CreateWindow(Settings)
-	local Passthrough = true
-	Topbar.Title.Text = Settings.Name
-	Main.Size = UDim2.new(0, 900, 0, 650)
-	Main.Visible = true
-	Main.BackgroundTransparency = 1
-	LoadingFrame.Title.TextTransparency = 1
-	LoadingFrame.Subtitle.TextTransparency = 1
-	Main.Shadow.Image.ImageTransparency = 1
-	LoadingFrame.Version.TextTransparency = 1
-	LoadingFrame.Title.Text = Settings.LoadingTitle or "Rayfield Interface Suite"
-	LoadingFrame.Subtitle.Text = Settings.LoadingSubtitle or "by Sirius"
-	if Settings.LoadingTitle ~= "Rayfield Interface Suite" then
-		LoadingFrame.Version.Text = ""
-	end
-	Topbar.Visible = false
-	Elements.Visible = false
-	LoadingFrame.Visible = true
+    local Passthrough = true
+    Topbar.Title.Text = Settings.Name
+    Main.Size = UDim2.new(0, 900, 0, 650)
+    Main.Visible = true
+    Main.BackgroundTransparency = 1
+    LoadingFrame.Title.TextTransparency = 1
+    LoadingFrame.Subtitle.TextTransparency = 1
+    Main.Shadow.Image.ImageTransparency = 1
+    LoadingFrame.Version.TextTransparency = 1
+    LoadingFrame.Title.Text = Settings.LoadingTitle or "Rayfield Interface Suite"
+    LoadingFrame.Subtitle.Text = Settings.LoadingSubtitle or "by Sirius"
+    if Settings.LoadingTitle ~= "Rayfield Interface Suite" then
+        LoadingFrame.Version.Text = ""
+    end
+    Topbar.Visible = false
+    Elements.Visible = false
+    LoadingFrame.Visible = true
 
+    pcall(function()
+        if not Settings.ConfigurationSaving.FileName then
+            Settings.ConfigurationSaving.FileName = tostring(game.PlaceId)
+        end
+        if not isfolder(SynCityFolder.."/".."Configuration Folders") then
 
-	pcall(function()
-		if not Settings.ConfigurationSaving.FileName then
-			Settings.ConfigurationSaving.FileName = tostring(game.PlaceId)
-		end
-		if not isfolder(SynCityFolder.."/".."Configuration Folders") then
+        end
+        if Settings.ConfigurationSaving.Enabled == nil then
+            Settings.ConfigurationSaving.Enabled = false
+        end
+        CFileName = Settings.ConfigurationSaving.FileName
+        ConfigurationFolder = Settings.ConfigurationSaving.FolderName or ConfigurationFolder
+        CEnabled = Settings.ConfigurationSaving.Enabled
 
-		end
-		if Settings.ConfigurationSaving.Enabled == nil then
-			Settings.ConfigurationSaving.Enabled = false
-		end
-		CFileName = Settings.ConfigurationSaving.FileName
-		ConfigurationFolder = Settings.ConfigurationSaving.FolderName or ConfigurationFolder
-		CEnabled = Settings.ConfigurationSaving.Enabled
-
-		if Settings.ConfigurationSaving.Enabled then
-			if not isfolder(ConfigurationFolder) then
-				makefolder(ConfigurationFolder)
-			end	
-		end
-	end)
-
-    local ImageLink = ""
-    local ImageFrame = Instance.new("Frame")
-    ImageFrame.Size = UDim2.new(1, 0, 0, 100)
-    ImageFrame.Position = UDim2.new(0, 0, 0, 50)
-    ImageFrame.BackgroundTransparency = 0.5
-    ImageFrame.BackgroundColor3 = Color3.new(0, 0, 0)
-    ImageFrame.BorderSizePixel = 0
-    ImageFrame.Parent = Main
-    
-    local TextBox = Instance.new("TextBox")
-    TextBox.Size = UDim2.new(0.8, 0, 0, 50)
-    TextBox.Position = UDim2.new(0.1, 0, 0, 0)
-    TextBox.PlaceholderText = "Enter Image Link Here"
-    TextBox.ClearTextOnFocus = false
-    TextBox.Parent = ImageFrame
-    
-    local ShowButton = Instance.new("TextButton")
-    ShowButton.Size = UDim2.new(0.2, 0, 0, 50)
-    ShowButton.Position = UDim2.new(0.4, 0, 1, -50)
-    ShowButton.Text = "Show Image"
-    ShowButton.TextColor3 = Color3.new(1, 1, 1)
-    ShowButton.BackgroundColor3 = Color3.new(0, 0.5, 1)
-    ShowButton.BorderSizePixel = 0
-    ShowButton.Parent = ImageFrame
-    ShowButton.MouseButton1Click:Connect(function()
-        ImageFrame:ClearAllChildren()
-        ImageFrame.Size = UDim2.new(1, 0, 1, 0)
-        local Image = Instance.new("ImageLabel")
-        Image.Size = UDim2.new(1, 0, 1, 0)
-        Image.BackgroundTransparency = 1
-        Image.Image = ImageLink
-        Image.Parent = ImageFrame
+        if Settings.ConfigurationSaving.Enabled then
+            if not isfolder(ConfigurationFolder) then
+                makefolder(ConfigurationFolder)
+            end 
+        end
     end)
+
+    local ImageFrame = Instance.new("Frame")
+    ImageFrame.Name = "ImageFrame"
+    ImageFrame.Parent = Main
+    ImageFrame.BackgroundTransparency = 1
+    ImageFrame.Size = UDim2.new(1, 0, 1, 0)
+    ImageFrame.Visible = false
+
+    local ImageLabel = Instance.new("ImageLabel")
+    ImageLabel.Name = "ImageLabel"
+    ImageLabel.Parent = ImageFrame
+    ImageLabel.BackgroundTransparency = 1
+    ImageLabel.Size = UDim2.new(1, 0, 1, 0)
+    ImageLabel.Position = UDim2.new(0, 0, 0, 0)
+
+    if Settings.ImageLink then
+        ImageLabel.Image = Settings.ImageLink
+        ImageFrame.Visible = true
+        wait(0.7)
+        ImageFrame.Visible = false
+    end
+end
+
+
 
     
 	AddDraggingFunctionality(Topbar,Main)
