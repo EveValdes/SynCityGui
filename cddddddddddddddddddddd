@@ -891,7 +891,8 @@ function SynLibrary:CreateWindow(Settings)
 	Topbar.Visible = false
 	Elements.Visible = false
 	LoadingFrame.Visible = true
-
+    
+    function SynLibrary:CreateWindow(Settings)
     local ImageLink = "rbxassetid://13320180666" -- Replace this with the image link you want to display
     local ImageFrame = Instance.new("Frame")
     ImageFrame.Size = UDim2.new(0.6, 2, 0.8, 5)
