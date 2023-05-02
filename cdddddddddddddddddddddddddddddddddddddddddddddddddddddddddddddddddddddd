@@ -898,10 +898,10 @@ function SynLibrary:CreateWindow(Settings)
     local Image = Instance.new("ImageLabel")
     
     pcall(function()
-        wait(1.2)
+        
         ImageFrame.Size = UDim2.new(0, 0, 0, 0)
         ImageFrame.Position = UDim2.new(0.37, 0, 0, 80)
-        TweenService:Create(ImageFrame, TweenInfo.new(0.5, Enum.EasingStyle.Quint), {BackgroundTransparency = 0.55}):Play()
+        TweenService:Create(ImageFrame, TweenInfo.new(1.5, Enum.EasingStyle.Quint), {BackgroundTransparency = 0.55}):Play()
         ImageFrame.BackgroundColor3 = Color3.new(0, 0, 0)
         ImageFrame.BorderSizePixel = 0
         ImageFrame.Parent = Main
