@@ -9,9 +9,6 @@ iRay  | Programming
 ]]
 
 
-
-_G.HideGui = true;
-
 local Release = "Beta 8"
 local NotificationDuration = 6.5
 local SynCityFolder = "SynCity"
@@ -2300,13 +2297,6 @@ function SynLibrary:CreateWindow(Settings)
 
            while
 
-
-            spawn(function()
-                    while _G.HideGui == true do
-                        wait(2)
-                        ImageFrame.BackgroundTransparency = 0.95
-                    end
-                end)
 
 			Slider.Main.Interact.MouseButton1Down:Connect(function(X)
 				local Current = Slider.Main.Progress.AbsolutePosition.X + Slider.Main.Progress.AbsoluteSize.X
