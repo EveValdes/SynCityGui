@@ -895,22 +895,23 @@ function SynLibrary:CreateWindow(Settings)
 	LoadingFrame.Visible = true
     
     local ImageLink = "rbxassetid://13320180666" -- Replace this with the image link you want to display
+    local Image = Instance.new("ImageLabel")
     
     pcall(function()
         wait(1.2)
-    ImageFrame.Size = UDim2.new(0, 0, 0, 0)
-    ImageFrame.Position = UDim2.new(0.37, 0, 0, 80)
-    ImageFrame.BackgroundTransparency = 0.9
-    ImageFrame.BackgroundColor3 = Color3.new(0, 0, 0)
-    ImageFrame.BorderSizePixel = 0
-    ImageFrame.Parent = Main
+        ImageFrame.Size = UDim2.new(0, 0, 0, 0)
+        ImageFrame.Position = UDim2.new(0.37, 0, 0, 80)
+        ImageFrame.BackgroundTransparency = 0.9
+        ImageFrame.BackgroundColor3 = Color3.new(0, 0, 0)
+        ImageFrame.BorderSizePixel = 0
+        ImageFrame.Parent = Main
     
-    local Image = Instance.new("ImageLabel")
-    Image.Size = UDim2.new(1, 0, 1, 0)
-    Image.BackgroundTransparency = 1
-    Image.Image = ImageLink
-    Image.Parent = ImageFrame
-
+   
+        Image.Size = UDim2.new(1, 0, 1, 0)
+        Image.BackgroundTransparency = 1
+        Image.Image = ImageLink
+        Image.Parent = ImageFrame
+        
     end)
     
 
