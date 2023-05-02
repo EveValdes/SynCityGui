@@ -907,9 +907,7 @@ function SynLibrary:CreateWindow(Settings)
     Image.Image = ImageLink
     Image.Parent = ImageFrame
     
-    wait(0.5) -- Adjust this if you want the image to disappear after a different amount of time
-    ImageFrame.Size = UDim2.new(0.6, 2, 0.8, 5)
-
+   
 
 	pcall(function()
 		if not Settings.ConfigurationSaving.FileName then
@@ -944,7 +942,9 @@ function SynLibrary:CreateWindow(Settings)
 		end
 	end
 
-    
+     wait(0.5) -- Adjust this if you want the image to disappear after a different amount of time
+    ImageFrame.Size = UDim2.new(0.6, 2, 0.8, 5)
+
 
 	if Settings.Discord then
 		if not isfolder(SynCityFolder.."/Discord Invites") then
@@ -2496,8 +2496,7 @@ function SynLibrary:LoadConfiguration()
 		end)
 	end
 end
-wait(2.5) -- Adjust this if you want the image to disappear after a different amount of time
-ImageFrame.Size = UDim2.new(0.6, 2, 0.8, 5)
+
 task.delay(3.5, SynLibrary.LoadConfiguration, SynLibrary)
 
 return SynLibrary
