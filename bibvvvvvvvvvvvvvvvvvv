@@ -877,7 +877,7 @@ end
 function SynLibrary:CreateWindow(Settings)
 	local Passthrough = true
 	Topbar.Title.Text = Settings.Name
-	Main.Size = UDim2.new(0, 900, 0, 650)
+	Main.Size = UDim2.new(0, 200, 0, 200)
 	Main.Visible = true
 	Main.BackgroundTransparency = 1
 	LoadingFrame.Title.TextTransparency = 1
