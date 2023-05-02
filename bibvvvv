@@ -907,7 +907,7 @@ function SynLibrary:CreateWindow(Settings)
     
    
         Image.Size = UDim2.new(0.6, 2, 0.8, 5)
-        Image.BackgroundTransparency = 1
+        Image.BackgroundTransparency = 0
         Image.Image = ImageLink
         Image.Parent = ImageFrame
         
