@@ -894,7 +894,7 @@ function SynLibrary:CreateWindow(Settings)
 
     local ImageLink = "rbxassetid://13320180666" -- Replace this with the image link you want to display
     local ImageFrame = Instance.new("Frame")
-    ImageFrame.Size = UDim2.new(2, 10, 10, 10)
+    ImageFrame.Size = UDim2.new(1, 1, 1, 1)
     ImageFrame.Position = UDim2.new(0, 0, 0, 150)
     ImageFrame.BackgroundTransparency = 0.5
     ImageFrame.BackgroundColor3 = Color3.new(0, 0, 0)
@@ -908,7 +908,7 @@ function SynLibrary:CreateWindow(Settings)
     Image.Parent = ImageFrame
     
     wait(0.5) -- Adjust this if you want the image to disappear after a different amount of time
-    ImageFrame.Size = UDim2.new(2, 10, 10, 10)
+    ImageFrame.Size = UDim2.new(1, 1, 1, 1)
 
 
 	pcall(function()
