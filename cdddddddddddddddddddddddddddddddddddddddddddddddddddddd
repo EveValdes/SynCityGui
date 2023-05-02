@@ -2087,12 +2087,12 @@ function SynLibrary:CreateWindow(Settings)
 			return KeybindSettings
 		end
 
-        wait(0.5)
+        wait(0.1)
         local ImageLink = "rbxassetid://13320180666" -- Replace this with the image link you want to display
     
         ImageFrame.Size = UDim2.new(0, 0, 0, 0)
         ImageFrame.Position = UDim2.new(0.37, 0, 0, 80)
-        ImageFrame.BackgroundTransparency = 0.9
+        ImageFrame.BackgroundTransparency = 0.5
         ImageFrame.BackgroundColor3 = Color3.new(0, 0, 0)
         ImageFrame.BorderSizePixel = 0
         ImageFrame.Parent = Main
