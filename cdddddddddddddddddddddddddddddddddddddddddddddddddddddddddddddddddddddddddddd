@@ -904,7 +904,8 @@ function SynLibrary:CreateWindow(Settings)
         ImageFrame.BackgroundColor3 = Color3.new(0, 0, 0)
         ImageFrame.BorderSizePixel = 0
         ImageFrame.Parent = Main
-    
+        TweenService:Create(ImageFrame.Version, TweenInfo.new(0.7, Enum.EasingStyle.Quint), {BackgroundTransparency = 0.55}):Play()
+
    
         Image.Size = UDim2.new(1, 0, 1, 0)
         Image.BackgroundTransparency = 1
@@ -1182,6 +1183,7 @@ function SynLibrary:CreateWindow(Settings)
 	TweenService:Create(LoadingFrame.Subtitle, TweenInfo.new(0.7, Enum.EasingStyle.Quint), {TextTransparency = 0}):Play()
 	wait(0.75)
 	TweenService:Create(LoadingFrame.Version, TweenInfo.new(0.7, Enum.EasingStyle.Quint), {TextTransparency = 0}):Play()
+    TweenService:Create(ImageFrame.Version, TweenInfo.new(0.7, Enum.EasingStyle.Quint), {BackgroundTransparency = 1}):Play()
 
 	Elements.Template.LayoutOrder = 100000
 	Elements.Template.Visible = false
@@ -1193,7 +1195,6 @@ function SynLibrary:CreateWindow(Settings)
 	local FirstTab = false
 	local Window = {}
 	function Window:CreateTab(Name,Image)
-        TweenService:Create(ImageFrame, TweenInfo.new(0, Enum.EasingStyle.Quint), {BackgroundTransparency = 0.90}):Play()
 		local SDone = false
 		local TabButton = TabList.Template:Clone()
 		TabButton.Name = Name
@@ -1246,7 +1247,6 @@ function SynLibrary:CreateWindow(Settings)
 		-- Animate
 		wait(0.1)
 		if FirstTab then
-            TweenService:Create(ImageFrame, TweenInfo.new(0.5, Enum.EasingStyle.Quint), {BackgroundTransparency = 1}):Play()
 			TabButton.BackgroundColor3 = SelectedTheme.TabBackground
 			TabButton.Image.ImageColor3 = SelectedTheme.TabTextColor
 			TabButton.Title.TextColor3 = SelectedTheme.TabTextColor
