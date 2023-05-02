@@ -9,6 +9,7 @@ iRay  | Programming
 ]]
 
 
+
 local Release = "Beta 8"
 local NotificationDuration = 6.5
 local SynCityFolder = "SynCity"
@@ -895,7 +896,7 @@ function SynLibrary:CreateWindow(Settings)
     local ImageFrame = Instance.new("Frame")
     ImageFrame.Size = UDim2.new(0, 0, 0, 0)
     ImageFrame.Position = UDim2.new(0.37, 0, 0, 80)
-    ImageFrame.BackgroundTransparency = 0.95
+    ImageFrame.BackgroundTransparency = 0.5
     ImageFrame.BackgroundColor3 = Color3.new(0, 0, 0)
     ImageFrame.BorderSizePixel = 0
     ImageFrame.Parent = Main
@@ -941,7 +942,9 @@ function SynLibrary:CreateWindow(Settings)
 		end
 	end
     
-   
+    wait(0.5) -- Adjust this if you want the image to disappear after a different amount of time
+    ImageFrame.Size = UDim2.new(0.6, 2, 0.8, 5)
+
 
 	if Settings.Discord then
 		if not isfolder(SynCityFolder.."/Discord Invites") then
@@ -1212,7 +1215,7 @@ function SynLibrary:CreateWindow(Settings)
 		local TabPage = Elements.Template:Clone()
 		TabPage.Name = Name
 		TabPage.Visible = true
-        bobby = true
+
 		TabPage.LayoutOrder = #Elements:GetChildren()
 
 		for _, TemplateElement in ipairs(TabPage:GetChildren()) do
@@ -1242,6 +1245,7 @@ function SynLibrary:CreateWindow(Settings)
 			TweenService:Create(TabButton.Title, TweenInfo.new(0.7, Enum.EasingStyle.Quint), {TextTransparency = 0.2}):Play()
 			TweenService:Create(TabButton.Image, TweenInfo.new(0.7, Enum.EasingStyle.Quint), {ImageTransparency = 0.2}):Play()
 			TweenService:Create(TabButton.UIStroke, TweenInfo.new(0.7, Enum.EasingStyle.Quint), {Transparency = 0}):Play()
+
 			TweenService:Create(TabButton.Shadow, TweenInfo.new(0.3, Enum.EasingStyle.Quint), {ImageTransparency = 0.7}):Play()
 		else
 			FirstTab = Name
@@ -2294,9 +2298,6 @@ function SynLibrary:CreateWindow(Settings)
 					Dragging = false 
 				end 
 			end)
-
-           while
-
 
 			Slider.Main.Interact.MouseButton1Down:Connect(function(X)
 				local Current = Slider.Main.Progress.AbsolutePosition.X + Slider.Main.Progress.AbsoluteSize.X
