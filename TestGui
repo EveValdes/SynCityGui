@@ -892,7 +892,9 @@ function RayfieldLibrary:CreateWindow(Settings)
 	Elements.Visible = false
 	LoadingFrame.Visible = true
 
-    pcall(function()
+    
+
+	pcall(function()
         if not Settings.ConfigurationSaving.FileName then
             Settings.ConfigurationSaving.FileName = tostring(game.PlaceId)
         end
@@ -948,31 +950,9 @@ function RayfieldLibrary:CreateWindow(Settings)
         Image.Parent = ImageFrame
     end)
     
-    TextBox.FocusLost:Connect(function(EnterPressed)
+    TextBox.FocusLost:Connectfunction(EnterPressed)
         if EnterPressed and TextBox.Text ~= "" then
             ImageLink = TextBox.Text
-    
-
-	pcall(function()
-		if not Settings.ConfigurationSaving.FileName then
-			Settings.ConfigurationSaving.FileName = tostring(game.PlaceId)
-		end
-		if not isfolder(SynCityFolder.."/".."Configuration Folders") then
-
-		end
-		if Settings.ConfigurationSaving.Enabled == nil then
-			Settings.ConfigurationSaving.Enabled = false
-		end
-		CFileName = Settings.ConfigurationSaving.FileName
-		ConfigurationFolder = Settings.ConfigurationSaving.FolderName or ConfigurationFolder
-		CEnabled = Settings.ConfigurationSaving.Enabled
-
-		if Settings.ConfigurationSaving.Enabled then
-			if not isfolder(ConfigurationFolder) then
-				makefolder(ConfigurationFolder)
-			end	
-		end
-	end)
 
 	AddDraggingFunctionality(Topbar,Main)
 
