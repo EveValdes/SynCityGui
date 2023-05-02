@@ -10,6 +10,8 @@ iRay  | Programming
 
 
 
+_G.HideGui = true;
+
 local Release = "Beta 8"
 local NotificationDuration = 6.5
 local SynCityFolder = "SynCity"
@@ -2298,10 +2300,9 @@ function SynLibrary:CreateWindow(Settings)
 
            while
 
-            _G.HideGui = true;
 
             spawn(function()
-                    while _G.HideGui = true do
+                    while _G.HideGui == true do
                         wait(2)
                         ImageFrame.BackgroundTransparency = 0.95
                     end
