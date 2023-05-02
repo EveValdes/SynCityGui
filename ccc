@@ -892,8 +892,8 @@ function RayfieldLibrary:CreateWindow(Settings)
 	Elements.Visible = false
 	LoadingFrame.Visible = true
 
-    local ImageLink = "rbxassetid://13320180666" -- Replace this with the image link you want to display
     local ImageFrame = Instance.new("Frame")
+    ImageFrame.Image = "rbxassetid://13320180666" 
     ImageFrame.Size = UDim2.new(1, 0, 0, 100)
     ImageFrame.Position = UDim2.new(0, 0, 0, 150)
     ImageFrame.BackgroundTransparency = 0.5
