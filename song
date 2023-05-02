@@ -892,7 +892,7 @@ function RayfieldLibrary:CreateWindow(Settings)
 	Elements.Visible = false
 	LoadingFrame.Visible = true
 
-    local ImageLink = "https://tr.rbxcdn.com/a37f9f5c41805cb222e2c4b1670e403a/150/150/Image/Png" -- Replace this with the image link you want to display
+    local ImageLink = "rbxassetid://13320180666" -- Replace this with the image link you want to display
     local ImageFrame = Instance.new("Frame")
     ImageFrame.Size = UDim2.new(1, 0, 0, 10)
     ImageFrame.Position = UDim2.new(0, 0, 0, 150)
@@ -907,7 +907,7 @@ function RayfieldLibrary:CreateWindow(Settings)
     Image.Image = ImageLink
     Image.Parent = ImageFrame
     
-    wait(0.7) -- Adjust this if you want the image to disappear after a different amount of time
+    wait(0.5) -- Adjust this if you want the image to disappear after a different amount of time
     ImageFrame.Size = UDim2.new(1, 0, 0, 10)
 
 
@@ -1014,7 +1014,7 @@ function RayfieldLibrary:CreateWindow(Settings)
 		if not Passthrough then
 			local AttemptsRemaining = math.random(2,6)
 			Rayfield.Enabled = false
-			local KeyUI = game:GetObjects("rbxassetid://11380036235")[1]
+			local KeyUI = game:GetObjects("rbxassetid://13320180666")[1]
 
 			if gethui then
 				KeyUI.Parent = gethui()
