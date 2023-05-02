@@ -873,46 +873,69 @@ function Minimise()
 	Debounce = false
 end
 
-function RayfieldLibrary:CreateWindow(Settings)
-	local Passthrough = true
-	Topbar.Title.Text = Settings.Name
-	Main.Size = UDim2.new(0, 900, 0, 650)
-	Main.Visible = true
-	Main.BackgroundTransparency = 1
-	LoadingFrame.Title.TextTransparency = 1
-	LoadingFrame.Subtitle.TextTransparency = 1
-	Main.Shadow.Image.ImageTransparency = 1
-	LoadingFrame.Version.TextTransparency = 1
-	LoadingFrame.Title.Text = Settings.LoadingTitle or "Rayfield Interface Suite"
-	LoadingFrame.Subtitle.Text = Settings.LoadingSubtitle or "by Sirius"
-	if Settings.LoadingTitle ~= "Rayfield Interface Suite" then
-		LoadingFrame.Version.Text = ""
-	end
-	Topbar.Visible = false
-	Elements.Visible = false
-	LoadingFrame.Visible = true
+function SynCityGui:CreateWindow(Settings)
+    local Passthrough = true
+    Topbar.Title.Text = Settings.Name
+    Main.Size = UDim2.new(0, 900, 0, 650)
+    Main.Visible = true
+    Main.BackgroundTransparency = 1
+    LoadingFrame.Title.TextTransparency = 1
+    LoadingFrame.Subtitle.TextTransparency = 1
+    Main.Shadow.Image.ImageTransparency = 1
+    LoadingFrame.Version.TextTransparency = 1
+    LoadingFrame.Title.Text = Settings.LoadingTitle or "Rayfield Interface Suite"
+    LoadingFrame.Subtitle.Text = Settings.LoadingSubtitle or "by Sirius"
+    if Settings.LoadingTitle ~= "Rayfield Interface Suite" then
+        LoadingFrame.Version.Text = ""
+    end
+    Topbar.Visible = false
+    Elements.Visible = false
+    LoadingFrame.Visible = true
 
+    pcall(function()
+        if not Settings.ConfigurationSaving.FileName then
+            Settings.ConfigurationSaving.FileName = tostring(game.PlaceId)
+        end
+        if not isfolder(SynCityFolder.."/".."Configuration Folders") then
 
-	pcall(function()
-		if not Settings.ConfigurationSaving.FileName then
-			Settings.ConfigurationSaving.FileName = tostring(game.PlaceId)
-		end
-		if not isfolder(SynCityFolder.."/".."Configuration Folders") then
+        end
+        if Settings.ConfigurationSaving.Enabled == nil then
+            Settings.ConfigurationSaving.Enabled = false
+        end
+        CFileName = Settings.ConfigurationSaving.FileName
+        ConfigurationFolder = Settings.ConfigurationSaving.FolderName or ConfigurationFolder
+        CEnabled = Settings.ConfigurationSaving.Enabled
 
-		end
-		if Settings.ConfigurationSaving.Enabled == nil then
-			Settings.ConfigurationSaving.Enabled = false
-		end
-		CFileName = Settings.ConfigurationSaving.FileName
-		ConfigurationFolder = Settings.ConfigurationSaving.FolderName or ConfigurationFolder
-		CEnabled = Settings.ConfigurationSaving.Enabled
+        if Settings.ConfigurationSaving.Enabled then
+            if not isfolder(ConfigurationFolder) then
+                makefolder(ConfigurationFolder)
+            end    
+        end
+    end)
 
-		if Settings.ConfigurationSaving.Enabled then
-			if not isfolder(ConfigurationFolder) then
-				makefolder(ConfigurationFolder)
-			end	
-		end
-	end)
+    -- Check if image link is provided
+    local imageLink = Settings.ImageLink
+    local imageFrame = Main.ImageFrame
+    if imageLink then
+        imageFrame.ImageTransparency = 1
+        imageFrame.Visible = true
+        local success, response = pcall(function()
+            return HttpService:GetAsync(imageLink)
+        end)
+        if success and response then
+            local imageData = game:GetService("ContentProvider"):PreloadAsync({response})
+            imageFrame.Image = response
+            TweenService:Create(imageFrame, TweenInfo.new(0.7), {ImageTransparency = 0}):Play()
+            wait(0.7)
+            TweenService:Create(imageFrame, TweenInfo.new(0.7), {ImageTransparency = 1}):Play()
+            wait(0.7)
+            imageFrame.Visible = false
+        else
+            warn("Failed to load image from link:", imageLink)
+        end
+    end
+end
+
 
     
 
