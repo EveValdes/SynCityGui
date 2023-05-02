@@ -900,7 +900,7 @@ function SynLibrary:CreateWindow(Settings)
     pcall(function()
         ImageFrame.Size = UDim2.new(0, 0, 0, 0)
         ImageFrame.Position = UDim2.new(0.37, 0, 0, 80)
-        TweenService:Create(ImageFrame, TweenInfo.new(0.1, Enum.EasingStyle.Quint), {BackgroundTransparency = 0.90}):Play()
+        TweenService:Create(ImageFrame, TweenInfo.new(3.0, Enum.EasingStyle.Quint), {BackgroundTransparency = 0.90}):Play()
         ImageFrame.BackgroundColor3 = Color3.new(0, 0, 0)
         ImageFrame.BorderSizePixel = 0
         ImageFrame.Parent = Main
