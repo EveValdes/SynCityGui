@@ -2487,6 +2487,14 @@ function SynLibrary:LoadConfiguration()
 	end
 end
 
+
+
+
+
+task.delay(3.5, SynLibrary.LoadConfiguration, SynLibrary)
+
+return SynLibrary
+
 pcall(function()
     wait(1.2)
     ImageFrame.Size = UDim2.new(0, 0, 0, 0)
@@ -2503,9 +2511,3 @@ pcall(function()
     Image.Parent = ImageFrame
     
 end)
-
-
-
-task.delay(3.5, SynLibrary.LoadConfiguration, SynLibrary)
-
-return SynLibrary
