@@ -912,6 +912,7 @@ function RayfieldLibrary:CreateWindow(Settings)
     ImageFrame.Size = UDim2.new(1, 0, 0, 100)
     wait(0.75)
     ImageFrame.Size = UDim2.new(0, 0, 0, 0)
+    end
 
 	pcall(function()
 		if not Settings.ConfigurationSaving.FileName then
