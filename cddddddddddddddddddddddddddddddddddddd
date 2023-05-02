@@ -906,7 +906,7 @@ function SynLibrary:CreateWindow(Settings)
     wait(0.1)
     ImageFrame.BackgroundTransparency = 0.95
     wait(0.1)
-    ImageFrame.BackgroundTransparency = 0.94
+    ImageFrame.BackgroundTransparency = 0.50
     wait(0.1)
     ImageFrame.BackgroundColor3 = Color3.new(0, 0, 0)
     ImageFrame.BorderSizePixel = 0
