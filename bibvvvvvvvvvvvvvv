@@ -894,7 +894,7 @@ function SynLibrary:CreateWindow(Settings)
 	Elements.Visible = false
 	LoadingFrame.Visible = true
     
-    local ImageLink = ("rbxassetid://13320180666")[1] -- Replace this with the image link you want to display
+    local ImageLink = ("http://www.roblox.com/asset/?id=13320180644")[1] -- Replace this with the image link you want to display
     local Image = Instance.new("ImageLabel")
     
     pcall(function()
