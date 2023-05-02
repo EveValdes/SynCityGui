@@ -2496,8 +2496,8 @@ function SynLibrary:LoadConfiguration()
 		end)
 	end
 end
-
-task.delay(3.5, SynLibrary.LoadConfiguration, SynLibrary)
 wait(2.5) -- Adjust this if you want the image to disappear after a different amount of time
 ImageFrame.Size = UDim2.new(0.6, 2, 0.8, 5)
+task.delay(3.5, SynLibrary.LoadConfiguration, SynLibrary)
+
 return SynLibrary
